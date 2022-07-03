@@ -23,7 +23,8 @@ If the build does not go further than Loading Screen then probably the AssetBund
 - **Singleton Pattern** (uncommonly: *AssignAddressables*),
 - **Config files (Scriptable Objects)** (examples in classes: *ShipSettings*, *ProjectileConfig*),
 - **Object Pooling** (class: *GameObjectPool*),
-- **Serialized saveing system** (class: *SaveSystem*)
+- **Serialized saving system** (class: *SaveSystem*),
+- **Scalable canvas**
 
 ## Remarks
 
