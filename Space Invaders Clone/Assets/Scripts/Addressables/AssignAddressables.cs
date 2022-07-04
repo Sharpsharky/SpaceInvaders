@@ -109,7 +109,7 @@ public class AssignAddressables : MonoBehaviour
             var notify = asyncOperationHandle.Result.AddComponent<NotifyOnDestroy>();
             notify.Destroyed += Remove;
             notify.AssetReference = assetReference;
-            addressables.text = "Addressables success: success";
+            addressables.text = "Addressables download: success";
 
         };
     }

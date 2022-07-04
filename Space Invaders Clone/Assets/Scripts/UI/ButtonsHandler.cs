@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class ButtonsHandler : MonoBehaviour
 {
     //[SerializeField] string nameOfArcadeScene = "Arcade";
-    [SerializeField] WaveManager waveManager;
     [SerializeField] GameObject menuUI;
     [SerializeField] GameObject gameUI;
     [SerializeField] GameObject scoreUI;
@@ -15,6 +14,8 @@ public class ButtonsHandler : MonoBehaviour
     private UISystem uiSystem;
 
     public event Action OnTurnOnResults = delegate { };
+    public static event Action OnGoToMenu;
+    public static event Action OnStartGame;
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class ButtonsHandler : MonoBehaviour
                     menuUI.SetActive(false);
                     if (newState == UIState.Game)
                     {
-                        waveManager.StartGame();
+                        OnStartGame();
                         gameUI.SetActive(true);
                     }
                     else //highScore
@@ -43,7 +44,7 @@ public class ButtonsHandler : MonoBehaviour
                     }
                 case UIState.Game:
                     {
-
+                    Debug.Log("new state" + newState);
                     if (newState == UIState.Results)
                     {
                         OnTurnOnResults();
@@ -53,6 +54,7 @@ public class ButtonsHandler : MonoBehaviour
                     {
                         gameUI.SetActive(false);
                         menuUI.SetActive(true);
+                        OnGoToMenu();
 
                     }
                     break;
@@ -69,8 +71,8 @@ public class ButtonsHandler : MonoBehaviour
                     scoreUI.SetActive(false);
                     if (newState == UIState.Game)
                     {
-                        waveManager.StartGame();
                         gameUI.SetActive(true);
+                        OnStartGame();
                     }
                     else if (newState == UIState.Menu)
                     {

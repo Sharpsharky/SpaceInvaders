@@ -990,7 +990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Addressables success: fail'
+  m_text: 'Addressables download:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6810,7 +6810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d18e51c5d9e48643a19a211c0261bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveManager: {fileID: 1223018651}
   menuUI: {fileID: 4872805009986322695}
   gameUI: {fileID: 26393778}
   scoreUI: {fileID: 537773098}

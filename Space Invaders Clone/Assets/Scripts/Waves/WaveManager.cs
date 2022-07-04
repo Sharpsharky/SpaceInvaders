@@ -21,6 +21,9 @@ public class WaveManager : MonoBehaviour
         regenerateWave = GetComponent<RegenerateWave>();
         enemyShooting = GetComponent<EnemyShooting>();
 
+        ButtonsHandler.OnGoToMenu += RemoveWave;
+        ButtonsHandler.OnStartGame += StartGame;
+
         enemyShooting.OnNextWave += NextWave;
     }
     private void Start()
@@ -52,9 +55,15 @@ public class WaveManager : MonoBehaviour
     public void EndGame()
     {
         OnFinishGame();
+        RemoveWave();
+    }
+
+    private void RemoveWave()
+    {
         regenerateWave.InitializeWave();
         OnTurnOnPlayer(false);
         OnPlayerChangePos();
+
     }
 
 }
